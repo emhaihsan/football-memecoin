@@ -1,0 +1,43 @@
+[project]
+src = "src"
+out = "out"
+dot_env = ".env"
+name = "vyper-tesseract-workshop"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["snekmate"]
+
+[networks.pyevm]
+is_zksync = false
+
+[networks.anvil]
+url = "http://127.0.0.1:8545"
+prompt_live = false
+save_to_db = false
+chain_id = 31337
+
+[networks.polygon-fork]
+url = "https://polygon.llamarpc.com"
+explorer_uri = "https://api.polygonscan.com/api/"
+explorer_type = "etherscan"
+explorer_api_key="${POLYGONSCAN_TOKEN}"
+chain_id = 137
+fork = true
+
+[networks.polygon]
+url = "https://polygon.llamarpc.com"
+chain_id = 137
+explorer_uri = "https://polygon.blockscout.com/"
+explorer_type = "blockscout"
+explorer_api_key="${BLOCKSCOUT_POLYGON_KEY}"
+default_account_name="maya"
+
+
+[networks.polygon-fork.contracts.quickswap_factory]
+address = "0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32"
+abi_from_explorer = true
+
+
+# You can view all configuration options at https://cyfrin.github.io/moccasin/all_moccasin_toml_parameters.html
