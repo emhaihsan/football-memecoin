@@ -25,6 +25,7 @@ explorer_type = "etherscan"
 explorer_api_key="${POLYGONSCAN_TOKEN}"
 chain_id = 137
 fork = true
+block_identifier = "latest"
 
 [networks.polygon]
 url = "https://polygon.llamarpc.com"
