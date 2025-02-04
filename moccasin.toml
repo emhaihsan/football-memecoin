@@ -19,7 +19,7 @@ save_to_db = false
 chain_id = 31337
 
 [networks.polygon-fork]
-url = "https://polygon.llamarpc.com"
+url = "https://polygon-rpc.com"
 explorer_uri = "https://api.polygonscan.com/api/"
 explorer_type = "etherscan"
 explorer_api_key="${POLYGONSCAN_TOKEN}"
@@ -28,12 +28,12 @@ fork = true
 block_identifier = "latest"
 
 [networks.polygon]
-url = "https://polygon.llamarpc.com"
+url = "https://polygon-rpc.com"
 chain_id = 137
 explorer_uri = "https://polygon.blockscout.com/"
 explorer_type = "blockscout"
 explorer_api_key="${BLOCKSCOUT_POLYGON_KEY}"
-default_account_name="maya"
+default_account_name="account"
 
 
 [networks.polygon-fork.contracts.quickswap_factory]

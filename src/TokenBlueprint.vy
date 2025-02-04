@@ -1,7 +1,6 @@
 # pragma version 0.4.0
 # @license MIT
-from ethereum.ercs import IERC20
-from ethereum.ercs import IERC20Detailed
+
 from snekmate.auth import ownable
 from snekmate.tokens import erc20
 

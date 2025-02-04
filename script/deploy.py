@@ -15,4 +15,4 @@ def deploy() -> VyperContract:
 
 
 def moccasin_main() -> VyperContract:
-    return deploy()
+    return deploy_token_only()

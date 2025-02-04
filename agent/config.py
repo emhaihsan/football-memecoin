@@ -15,8 +15,7 @@ def get_required_env_var(var_name):
 
 
 FEED_URL = os.getenv("FEED_URL", "https://feeds.nbcnews.com/nbcnews/public/news")
-OPENAI_API_KEY = get_required_env_var("OPENAI_API_KEY")
+OPENAI_API_KEY = get_required_env_var("OPEN_AI_KEY")
 TWITTER_USERNAME = get_required_env_var("TWITTER_USERNAME")
 TWITTER_PASSWORD = get_required_env_var("TWITTER_PASSWORD")
 TWITTER_EMAIL = get_required_env_var("TWITTER_EMAIL")
-WALLET_PRIVATE_KEY = get_required_env_var("WALLET_PRIVATE_KEY")

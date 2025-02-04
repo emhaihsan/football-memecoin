@@ -7,9 +7,8 @@ from agent.config import (
     TWITTER_USERNAME,
     TWITTER_PASSWORD,
     TWITTER_EMAIL,
-    WALLET_PRIVATE_KEY,
 )
-from agent.services.deployer import DeployerService
+from agent.services.deployer import deploy_token
 from agent.services.news import NewsService
 from agent.services.gpt import AIService
 from agent.services.twitter import TwitterService
@@ -34,7 +33,6 @@ async def post_to_twitter(twitter_service, token, image_url):
 def main():
     news_service = NewsService(FEED_URL)
     ai_service = AIService(OPENAI_API_KEY)
-    deployer_service = DeployerService(WALLET_PRIVATE_KEY)
     twitter_service = TwitterService(TWITTER_USERNAME, TWITTER_EMAIL, TWITTER_PASSWORD)
     while True:
         headlines = news_service.poll_feed()
@@ -54,13 +52,13 @@ def main():
                     if image_url:
                         logger.info(f"Generated meme image: {image_url}")
 
-                        new_token_address = deployer_service.deploy_token(
+                        new_token_address = deploy_token(
                             token.name, token.ticker
                         )
                         if new_token_address:
                             quickswap_link = f"https://quickswap.exchange/#/swap?outputCurrency={new_token_address}"
                             tweet_text = f"{token.shill_line}\n\nGet in on QuickSwap: {quickswap_link}"
-
+                            logger.info(tweet_text)
                             success = twitter_service.post_meme(tweet_text, image_url)
                             if success:
                                 logger.info("Successfully posted to Twitter")
@@ -71,5 +69,5 @@ def main():
         time.sleep(15 * 60)
 
 
-if __name__ == "__main__":
-    main()
+def moccasin_main():
+    return main()
