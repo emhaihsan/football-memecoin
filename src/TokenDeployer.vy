@@ -94,14 +94,13 @@ def deploy_token(
     @return Address of new token and amount of LP tokens
     """
 
-    assert msg.value > 0, "ETH amount must be greater than 0"
+    assert msg.value > 0, "POL amount must be greater than 0"
     assert owner_share < MAX_OWNER_SHARE, "Owner share must be lower than 90%"
     assert total_supply > 0, "Total supply must be greater than 0"
     # deploy the token with the metadata given
     new_token: address = self._create_token(
         name, symbol, decimals, name_eip712, version_eip712
     )
-    log TokenDeployed(new_token, total_supply)
 
     # Calculate owner's share
     owner_amount: uint256 = total_supply * owner_share // 10_000
@@ -115,6 +114,7 @@ def deploy_token(
     extcall IERC20Extended(new_token).mint(
         self, liquidity_amount
     )  # Mint liquidity tokens to contract
+    log TokenDeployed(new_token, total_supply)
 
     # Renounce token contract ownership if burn_owner or transfer it to the sender
     if burn_owner:
