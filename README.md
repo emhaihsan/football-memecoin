@@ -1,4 +1,16 @@
-# vyper_tesseract_workshop
+# Vyper Polygon/Tesseract Workshop
+
+Source code for the agent used for the workshop.
+
+## Setting up your dev environment
+
+1. Install [uv](https://github.com/astral-sh/uv): `pip install uv`
+3. Clone this repository and cd into it: `git clone git@github.com:benber86/vyper_tesseract_workshop.git && cd vyper_tesseract_workshop`
+4. Set up a virtual environment: `uv venv`
+5. Activate the virtual environment: `source .venv/bin/activate`
+6. Install the Python dependencies: `uv pip install .`
+7. Install the [moccasin](https://github.com/Cyfrin/moccasin) dependencies: `uv run moccasin install`
+8. Set up your `.env` file and fill in the values based on the provided `example.env` file
 
 Workshop steps:
 
