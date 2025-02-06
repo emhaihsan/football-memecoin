@@ -8,9 +8,9 @@ from agent.config import (
     TWITTER_PASSWORD,
     TWITTER_EMAIL,
 )
-from agent.services.deployer import deploy_token
 from agent.services.news import NewsService
 from agent.services.gpt import AIService
+from agent.services.deployer import deploy_token
 from agent.services.twitter import TwitterService
 
 logging.basicConfig(

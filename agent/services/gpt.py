@@ -133,7 +133,7 @@ class AIService:
                         $PEPE - The most memeable frog
                         $TURBO - AI Trading gone wild
                         $WIF - Wife changing money season
-                        Make it fun and engaging but not offensive.""",
+                        Make it fun and engaging but not offensive. Make sure that the tagline does not go against the OpenAI image generation safety system as it will be used to genreate an image with DALL-E.""",
                     },
                     {
                         "role": "user",
