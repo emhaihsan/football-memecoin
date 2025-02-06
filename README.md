@@ -21,18 +21,34 @@ The agent parses headlines from news sources to find memecoin-worthy content. It
 7. Install the [moccasin](https://github.com/Cyfrin/moccasin) dependencies: `uv run moccasin install`
 8. Set up your `.env` file and fill in the values based on the provided `example.env` file
 
-Workshop steps:
+## Workshop steps:
 
-- Setting up an environment: Python, uv, moccasin
-- Making & deploying an ERC20 token with modules (snekmate)
-- Making a factory contract with Blueprints (TokenFactory)
-- Making a memecoin factory contract with Quickswap liquidity pools
-- Writing tests
-- Putting it all together: Using OpenAI's API and functions to make an agent
+1. **Environment Setup**: Install and configure Python, uv package manager, and Moccasin framework for Vyper development - [Video](https://www.youtube.com/watch?v=DpmQulxFRkg)
+2. **Basic ERC20 Token**: Create and deploy a simple ERC20 token using Snekmate modules and Vyper - [Video](https://www.youtube.com/watch?v=yY_XbaQWlk8)
+3. **Blueprint Factory**: Build a token factory contract using Vyper's Blueprint pattern for efficient deployment - [Video](https://www.youtube.com/watch?v=V3ahAiedaFM)
+4. **Liquidity Integration**: Extend our factory to automatically create Quickswap liquidity pools for new tokens - [Video](https://youtu.be/0zabpBw6OaY)
+5. **AI Integration**: Develop an autonomous agent using OpenAI's function calling to generate and deploy memecoins - [Video](https://youtu.be/PGtAkdcG120)
+6. **Live Deployment**: Run our complete system live, watching it monitor news, create tokens, and manage social media - [Video](https://youtu.be/RqVcbTX_GXo)
 
-Ideas to implement for small contest:
+## Running tests
 
-- Make the amount of liquidity deployed dynamic based on how strong the agent thinks the meme's potential is
-- Use another source instead of news like Solana memecoin deployments
-- Do NFTs instead of ERC20
-- Add interactivity to the agent: people send ETH and ask on Twitter with a signature to prove ownership
+`uv run moccasin test --network polygon-fork`
+
+## Deploying the Token Deployer Contract
+
+`uv run moccasin deploy --network polygon`
+
+## Running the Agent
+
+`uv run mocassin run agent --network polygon`
+
+# Ideas for the Project Contest
+
+Try implementing one or more of these features based on the sample project
+
+1. **Alternative Inputs**: Replace RSS feeds with on-chain event monitoring or real time market data
+2. **NFT Variant**: Adapt system for NFT collections instead of ERC20 tokens, taking advantage of AI image generation
+3. **Dynamic Liquidity**: Scale initial liquidity amount based on AI-scored meme potential
+4. **Agent Interactions**: Create another agent to interact with or comment on the actions of the memecoin agent
+
+Or just roll out your own ideas from scractch!
