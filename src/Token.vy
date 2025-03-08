@@ -19,6 +19,7 @@ exports: (
     erc20.set_minter,      # Export the set_minter functionality
 )
 
+# Constructor if in solidity
 @deploy
 def __init__():
     ownable.__init__()  # Initialize the Ownable contract
