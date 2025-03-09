@@ -16,7 +16,7 @@ class AIService:
             functions = [
                 {
                     "name": "evaluate_meme_potential",
-                    "description": "Evaluate if news headlines have potential for memecoins",
+                    "description": "Evaluate if football/soccer (not american football) news headlines have potential for memecoins",
                     "parameters": {
                         "type": "object",
                         "properties": {
@@ -27,15 +27,15 @@ class AIService:
                                     "properties": {
                                         "headline": {
                                             "type": "string",
-                                            "description": "The news headline",
+                                            "description": "The football/soccer news headline",
                                         },
                                         "is_worthy": {
                                             "type": "boolean",
-                                            "description": "Whether the headline is worthy of a memecoin",
+                                            "description": "Whether the football/soccer headline is worthy of a memecoin",
                                         },
                                         "reasoning": {
                                             "type": "string",
-                                            "description": "Explanation of the decision",
+                                            "description": "Explanation of the decision, focusing on football/soccer relevance and meme potential",
                                         },
                                     },
                                     "required": ["headline", "is_worthy", "reasoning"],
@@ -52,26 +52,31 @@ class AIService:
                 messages=[
                     {
                         "role": "system",
-                        "content": """You are an expert at identifying viral meme potential in news headlines. 
-                        A headline is meme-worthy if it involves:
-                        - Celebrities doing something controversial or silly
-                        - Tech billionaires making headlines
-                        - Unusual or absurd situations
-                        - Popular culture moments
-                        - Viral trends or phenomena
-                        Be selective and original - only truly viral-worthy and new content should return true. 
-                        We are only looking at launching one single new meme coin every now and then.
-                        We don't want to launch a memecoin that already exists like $TRUMP, $MUSK or $BIDEN.
-                        Examples of news-based meme coins include:
-                        $BODEN about President Joe Biden during the election
-                        $TRUMP launched during the 2024 U.S. presidential election
-                        $MOODENG based on a baby pygmy hippo living in a zoo in Thailand
-                        $LUIGI based on the news that 'the CEO of the largest insurance company in America was shot by digital nomad Luigi Nicholas Mangione'
-                        $HARAMBE as a tribute to the beloved gorilla of the same name""",
+                        "content": """You are a memecoin creator specialized in football/soccer memes (NOT American football/NFL). 
+                        Your task is to evaluate football/soccer news headlines for their potential to be turned into viral football-themed memecoins.
+                        
+                        Consider factors like:
+                        - Player popularity and memorable moments
+                        - Unexpected match results or comebacks
+                        - Transfer news and team changes
+                        - Manager quotes or coaching changes
+                        - Tournament events (World Cup, Champions League, etc.)
+                        - Fan culture and stadium moments
+                        
+                        AVOID headlines about:
+                        - Injuries or health issues
+                        - Political statements by players/teams
+                        - Controversial referee decisions
+                        - Discrimination, racism, or any sensitive social issues
+                        - Violence, hooliganism, or negative fan behavior
+                        - Betting or gambling-related news
+                        
+                        Focus ONLY on positive, fun, or interesting football/soccer news that would make for entertaining and non-controversial memes.
+                        A good headline should have viral potential, be easily recognizable to football fans, and have potential for a catchy token name and symbol.""",
                     },
                     {
                         "role": "user",
-                        "content": f"Evaluate these headlines for meme potential: {json.dumps(headlines)}",
+                        "content": f"Evaluate these football/soccer news headlines for memecoin potential: {json.dumps(headlines)}",
                     },
                 ],
                 functions=functions,
