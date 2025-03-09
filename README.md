@@ -3,7 +3,7 @@
 Source code for an autonomous agent that creates football-themed memecoins.
 The agent parses headlines from football news sources to find memecoin-worthy content related to the beautiful game. It then creates a memecoin for the content that it finds, using a Vyper contract to deploy an ERC20 token contract and depositing liquidity for the token into Quickswap. The agent then advertises the newly deployed football-themed token on social media.
 
-
+![](https://github.com/emhaihsan/football-memecoin/blob/main/img.png)
 ## What Makes FootCoin Special?
 
 FootCoin focuses exclusively on football/soccer news (not American football), creating memecoins that resonate with the global football community. The system:
