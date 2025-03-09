@@ -1,34 +1,42 @@
-# Vyper Polygon/Tesseract Workshop
+# FootCoin: Football-Themed Memecoin Generator
 
-Source code for the agent used for the workshop. 
-The agent parses headlines from news sources to find memecoin-worthy content. It then creates a memecoin for the content that it finds, using a Vyper contract to deploy an ERC20 token contract and depositing liquidity for the token into Quickswap. The agent then advertises the newly deployed token on social media.
+Source code for an autonomous agent that creates football-themed memecoins.
+The agent parses headlines from football news sources to find memecoin-worthy content related to the beautiful game. It then creates a memecoin for the content that it finds, using a Vyper contract to deploy an ERC20 token contract and depositing liquidity for the token into Quickswap. The agent then advertises the newly deployed football-themed token on social media.
 
 <p align="center">
 
 <img src="https://github.com/user-attachments/assets/94b34c12-a51c-4954-9f02-72635355de8f"/>
 
- 
 </p>
 
+## What Makes FootCoin Special?
+
+FootCoin focuses exclusively on football/soccer news (not American football), creating memecoins that resonate with the global football community. The system:
+
+- Monitors football news from reliable sources like BBC Sport
+- Evaluates headlines for their memecoin potential based on player popularity, match results, transfers, and more
+- Creates football-themed token names, tickers, and promotional content
+- Generates football-themed meme images that combine crypto elements with football culture
+- Avoids sensitive topics like injuries, politics, and controversial decisions
 
 ## Setting up your dev environment
 
 1. Install [uv](https://github.com/astral-sh/uv): `pip install uv`
-3. Clone this repository and cd into it: `git clone git@github.com:benber86/vyper_tesseract_workshop.git && cd vyper_tesseract_workshop`
-4. Set up a virtual environment: `uv venv`
-5. Activate the virtual environment: `source .venv/bin/activate`
-6. Install the Python dependencies: `uv pip install .`
-7. Install the [moccasin](https://github.com/Cyfrin/moccasin) dependencies: `uv run moccasin install`
-8. Set up your `.env` file and fill in the values based on the provided `example.env` file
+2. Clone this repository and cd into it: `git clone git@github.com:benber86/vyper_tesseract_workshop.git && cd vyper_tesseract_workshop`
+3. Set up a virtual environment: `uv venv`
+4. Activate the virtual environment: `source .venv/bin/activate`
+5. Install the Python dependencies: `uv pip install .`
+6. Install the [moccasin](https://github.com/Cyfrin/moccasin) dependencies: `uv run moccasin install`
+7. Set up your `.env` file and fill in the values based on the provided `example.env` file
 
-## Workshop steps:
+## How It Works
 
-1. **Environment Setup**: Install and configure Python, uv package manager, and Moccasin framework for Vyper development - [Video](https://www.youtube.com/watch?v=DpmQulxFRkg)
-2. **Basic ERC20 Token**: Create and deploy a simple ERC20 token using Snekmate modules and Vyper - [Video](https://www.youtube.com/watch?v=yY_XbaQWlk8)
-3. **Blueprint Factory**: Build a token factory contract using Vyper's Blueprint pattern for efficient deployment - [Video](https://www.youtube.com/watch?v=V3ahAiedaFM)
-4. **Liquidity Integration**: Extend our factory to automatically create Quickswap liquidity pools for new tokens - [Video](https://youtu.be/0zabpBw6OaY)
-5. **AI Integration**: Develop an autonomous agent using OpenAI's function calling to generate and deploy memecoins - [Video](https://youtu.be/PGtAkdcG120)
-6. **Live Deployment**: Run our complete system live, watching it monitor news, create tokens, and manage social media - [Video](https://youtu.be/RqVcbTX_GXo)
+1. **News Monitoring**: The agent fetches the latest football news from BBC Sport's RSS feed
+2. **AI Evaluation**: OpenAI's GPT models evaluate headlines for their memecoin potential
+3. **Token Creation**: For worthy headlines, the agent creates a football-themed token name and ticker
+4. **Smart Contract Deployment**: A Vyper contract is deployed to create the ERC20 token
+5. **Liquidity Provision**: Automatic liquidity is added to Quickswap for trading
+6. **Social Media Promotion**: The agent creates and posts promotional content on Twitter
 
 ## Running tests
 
@@ -40,15 +48,22 @@ The agent parses headlines from news sources to find memecoin-worthy content. It
 
 ## Running the Agent
 
-`uv run mocassin run agent --network polygon`
+`uv run moccasin run agent --network polygon`
 
-# Ideas for the Project Contest
+## Future Enhancements
 
-Try implementing one or more of these features based on the sample project
+1. **Team-Specific Feeds**: Add support for team-specific news sources and fan blogs
+2. **Tournament Mode**: Special functionality during major tournaments (World Cup, Euros, Champions League)
+3. **Player Stats Integration**: Incorporate real-time player statistics to influence token generation
+4. **Fan Engagement**: Allow fans to vote on which football news should become memecoins
+5. **Multi-Language Support**: Expand to football news in multiple languages to capture global fan bases
 
-1. **Alternative Inputs**: Replace RSS feeds with on-chain event monitoring or real time market data
-2. **NFT Variant**: Adapt system for NFT collections instead of ERC20 tokens, taking advantage of AI image generation
-3. **Dynamic Liquidity**: Scale initial liquidity amount based on AI-scored meme potential
-4. **Agent Interactions**: Create another agent to interact with or comment on the actions of the memecoin agent
+## Credits and Acknowledgements
 
-Or just roll out your own ideas from scractch!
+This project is an adaptation of the original codebase from the Vyper/Tesseract Workshop created by [benber86](https://github.com/benber86). The original workshop materials and code can be found at [https://github.com/benber86/vyper_tesseract_workshop/tree/main](https://github.com/benber86/vyper_tesseract_workshop/tree/main).
+
+I've modified the original codebase to focus specifically on football/soccer news and memecoins, while maintaining the core architecture and deployment mechanisms. Special thanks to the workshop creators for providing such an excellent foundation to build upon.
+
+## Disclaimer
+
+This project is for educational and entertainment purposes only. Always do your own research before investing in any cryptocurrency, especially memecoins.
