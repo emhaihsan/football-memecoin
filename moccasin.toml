@@ -33,7 +33,7 @@ chain_id = 137
 explorer_uri = "https://polygon.blockscout.com/"
 explorer_type = "blockscout"
 explorer_api_key="${BLOCKSCOUT_POLYGON_KEY}"
-default_account_name="account"
+default_account_name="devwallet"
 
 
 [networks.polygon-fork.contracts.quickswap_factory]
